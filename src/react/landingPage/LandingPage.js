@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 
 import Header from '../common/Header'
+import KeyInput from '../common/KeyInput'
 import MyRow from '../common/MyRow'
 
 export default function LandingPage(props){
@@ -11,18 +12,10 @@ export default function LandingPage(props){
           <Header />
           <MyRow>
             <Form>
-              <Form.Group controlId="form.firstKey" className="mx-2 my-4">
-                <Form.Control type="password" placeholder="Inserisci la chiave corretta" className="text-center"/>
-              </Form.Group>
-              <Form.Group controlId="form.secondKey" className="mx-2 my-4">
-                <Form.Control type="password" placeholder="Inserisci la chiave corretta" className="text-center"/>
-              </Form.Group>
-              <Form.Group controlId="form.thirdKey" className="mx-2 my-4">
-                <Form.Control type="password" placeholder="Inserisci la chiave corretta" className="text-center"/>
-              </Form.Group>
-              <Form.Group controlId="form.fourthKey" className="mx-2 my-4">
-                <Form.Control type="password" placeholder="Inserisci la chiave corretta" className="text-center"/>
-              </Form.Group>
+              <KeyInput id={"form.firstKey"} />
+              <KeyInput id={"form.secondKey"} />
+              <KeyInput id={"form.thirdKey"} />
+              <KeyInput id={"form.fourthKey"} />
             </Form>
           </MyRow>
           <MyRow>
