@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 
-import LandingPage from "./react/landingPage/LandingPage"
+import LandingPage from './react/LandingPage'
+import MidPage from './react/MidPage'
 
 const options = {
     timeout: 3000,
@@ -25,7 +26,7 @@ function renderStage(stage, setStage){
     if(stage === 0){
         return <LandingPage onUnlock={() => setStage(stage + 1)}/>
     } else if (stage === 1){
-        return <p>stage 1</p>
+        return <MidPage onUnlock={() => setStage(stage + 1)}/>
     } else {
         return <p>stage 2</p>
     }
