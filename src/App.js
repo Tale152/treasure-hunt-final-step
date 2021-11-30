@@ -6,7 +6,7 @@ import AlertTemplate from 'react-alert-template-basic'
 import LandingPage from "./react/landingPage/LandingPage"
 
 const options = {
-    timeout: 4000,
+    timeout: 3000,
     position: positions.TOP_CENTER
 }
 

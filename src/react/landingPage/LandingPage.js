@@ -14,6 +14,7 @@ export default function LandingPage(props){
     const [secondKey, setSecondKey] = useState("")
     const [thirdKey, setThirdKey] = useState("")
     const [fourthKey, setFourthKey] = useState("")
+    const [proceed, setProceed] = useState(false)
 
     return (
         <div>
@@ -27,10 +28,13 @@ export default function LandingPage(props){
                 </Form>
             </MyRow>
             <MyRow>
-                <ContinueButton onClick={() => {
+                <ContinueButton disabled={proceed} onClick={() => {
                     if(firstKey === "a" && secondKey === "b" && thirdKey === "c" && fourthKey === "d"){
+                        setProceed(true)
                         alert.success("Chiavi corrette")
-                        props.onUnlock()
+                        setTimeout(function(){
+                            props.onUnlock()
+                        },3000);
                     } else {
                         alert.error("Chiavi errate")
                     }
