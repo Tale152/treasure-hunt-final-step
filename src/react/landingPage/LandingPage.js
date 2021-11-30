@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
+import { useAlert } from 'react-alert'
 
 import Header from '../common/Header'
 import KeyInput from '../common/KeyInput'
@@ -8,6 +9,7 @@ import ContinueButton from '../common/ContinueButton'
 
 export default function LandingPage(props){
 
+    const alert = useAlert()
     const [firstKey, setFirstKey] = useState("")
     const [secondKey, setSecondKey] = useState("")
     const [thirdKey, setThirdKey] = useState("")
@@ -25,7 +27,13 @@ export default function LandingPage(props){
                 </Form>
             </MyRow>
             <MyRow>
-                <ContinueButton onClick={() => console.log(firstKey)} />
+                <ContinueButton onClick={() => {
+                    if(firstKey === "a" && secondKey === "b" && thirdKey === "c" && fourthKey === "d"){
+                        alert.success("Chiavi corrette")
+                    } else {
+                        alert.error("Chiavi errate")
+                    }
+                }} />
             </MyRow>
         </div>
     )
