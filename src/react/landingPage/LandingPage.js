@@ -2,18 +2,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 
+import Header from '../common/Header'
 import MyRow from '../common/MyRow'
-import crown from '../../res/crown.png'
 
 export default function LandingPage(props){
     return (
         <div>
-          <MyRow>
-            <img src={crown} alt="Kings quest" width="256" height="256"/>
-          </MyRow>
-          <MyRow>
-            <h1>Kings quest</h1>
-          </MyRow>
+          <Header />
           <MyRow>
             <Form>
               <Form.Group controlId="form.firstKey" className="mx-2 my-4">
