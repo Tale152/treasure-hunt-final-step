@@ -30,6 +30,7 @@ export default function LandingPage(props){
                 <ContinueButton onClick={() => {
                     if(firstKey === "a" && secondKey === "b" && thirdKey === "c" && fourthKey === "d"){
                         alert.success("Chiavi corrette")
+                        props.onUnlock()
                     } else {
                         alert.error("Chiavi errate")
                     }
