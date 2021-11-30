@@ -15,9 +15,10 @@ export default function LandingPage(props){
     const [thirdKey, setThirdKey] = useState("")
     const [fourthKey, setFourthKey] = useState("")
     const [proceed, setProceed] = useState(false)
+    var fade = require('fade')
 
     return (
-        <div>
+        <div id="LandingPage">
             <Header />
             <MyRow>
                 <Form>
@@ -32,9 +33,10 @@ export default function LandingPage(props){
                     if(firstKey === "a" && secondKey === "b" && thirdKey === "c" && fourthKey === "d"){
                         setProceed(true)
                         alert.success("Chiavi corrette")
+                        fade.out(document.querySelector('#LandingPage', 2800))
                         setTimeout(function(){
                             props.onUnlock()
-                        },3000);
+                        },3000)
                     } else {
                         alert.error("Chiavi errate")
                     }
