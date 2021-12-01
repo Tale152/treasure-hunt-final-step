@@ -3,10 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 
-import Header from './react/common/Header'
-import LandingPage from './react/LandingPage'
-import MidPage from './react/MidPage'
-import FinalPage from './react/FinalPage'
+import Header from './common/Header'
+import LandingPage from './LandingPage'
+import MidPage from './MidPage'
+import FinalPage from './FinalPage'
 
 const options = {
     timeout: 3000,
