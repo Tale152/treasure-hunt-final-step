@@ -18,12 +18,14 @@ export default function App() {
     const [stage, setStage] = useState(0)
 
     return (
+      <div style={{overflowX: "hidden"}}>
         <AlertProvider template={AlertTemplate} {...options}>
           <Header />
           <div id="content">
             {renderStage(stage, setStage)}
           </div>
         </AlertProvider>
+      </div>
     )
 }
 

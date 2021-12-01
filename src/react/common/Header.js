@@ -5,7 +5,7 @@ export default function Header(){
     return (
         <div>
             <MyRow>
-                <img src={crown} alt="Kings quest" width="256" height="256"/>
+                <img src={crown} alt="Kings quest" width="200" height="200"/>
             </MyRow>
             <MyRow>
                 <h1>Kings quest</h1>
