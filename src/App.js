@@ -6,6 +6,7 @@ import AlertTemplate from 'react-alert-template-basic'
 import Header from './react/common/Header'
 import LandingPage from './react/LandingPage'
 import MidPage from './react/MidPage'
+import FinalPage from './react/FinalPage'
 
 const options = {
     timeout: 3000,
@@ -32,6 +33,6 @@ function renderStage(stage, setStage){
     } else if (stage === 1){
         return <MidPage onUnlock={() => setStage(stage + 1)}/>
     } else {
-        return <p>stage 2</p>
+        return <FinalPage />
     }
 }
