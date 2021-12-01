@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { useAlert } from 'react-alert'
 
+import Exposition from './common/Exposition'
 import KeyInput from './common/KeyInput'
 import MyRow from './common/MyRow'
 import ContinueButton from './common/ContinueButton'
@@ -21,6 +22,7 @@ export default function MidPage(props){
 
     return (
         <div>
+            <Exposition text={"La vittoria va conquistata in battaglia"} />
             <MyRow>
                 <Form>
                     <KeyInput id={"form.key"} onChange={setKey}/>
