@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 
+import Header from './react/common/Header'
 import LandingPage from './react/LandingPage'
 import MidPage from './react/MidPage'
 
@@ -17,7 +18,10 @@ export default function App() {
 
     return (
         <AlertProvider template={AlertTemplate} {...options}>
-          {renderStage(stage, setStage)}
+          <Header />
+          <div id="content">
+            {renderStage(stage, setStage)}
+          </div>
         </AlertProvider>
     )
 }

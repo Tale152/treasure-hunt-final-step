@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { useAlert } from 'react-alert'
 
-import Header from './common/Header'
 import KeyInput from './common/KeyInput'
 import MyRow from './common/MyRow'
 import ContinueButton from './common/ContinueButton'
@@ -18,8 +17,7 @@ export default function LandingPage(props){
     var fade = require('fade')
 
     return (
-        <div id="LandingPage">
-            <Header />
+        <div>
             <MyRow>
                 <Form>
                     <KeyInput id={"form.firstKey"} onChange={setFirstKey}/>
@@ -33,10 +31,10 @@ export default function LandingPage(props){
                     if(firstKey === "a" && secondKey === "b" && thirdKey === "c" && fourthKey === "d"){
                         setProceed(true)
                         alert.success("Chiavi corrette")
-                        fade.out(document.querySelector('#LandingPage', 2800))
+                        fade.out(document.querySelector('#content', 1500))
                         setTimeout(function(){
                             props.onUnlock()
-                        },3000)
+                        }, 1600)
                     } else {
                         alert.error("Chiavi errate")
                     }
