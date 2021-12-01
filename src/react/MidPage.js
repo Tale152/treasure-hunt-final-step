@@ -31,10 +31,10 @@ export default function MidPage(props){
                     if(key === "x"){
                         setProceed(true)
                         alert.success("Chiave corretta")
-                        fade.out(document.querySelector('#MidPage', 2800))
+                        fade.out(document.querySelector('#content', 1500))
                         setTimeout(function(){
                             props.onUnlock()
-                        },3000)
+                        }, 1600)
                     } else {
                         alert.error("Chiave errata")
                     }

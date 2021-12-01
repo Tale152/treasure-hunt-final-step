@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { useAlert } from 'react-alert'
 
+import Exposition from './common/Exposition'
 import KeyInput from './common/KeyInput'
 import MyRow from './common/MyRow'
 import ContinueButton from './common/ContinueButton'
@@ -18,6 +19,7 @@ export default function LandingPage(props){
 
     return (
         <div>
+            <Exposition text={"Quattro chiavi per quattro profeti"} />
             <MyRow>
                 <Form>
                     <KeyInput id={"form.firstKey"} onChange={setFirstKey}/>
