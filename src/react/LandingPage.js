@@ -30,7 +30,10 @@ export default function LandingPage(props){
             </MyRow>
             <MyRow>
                 <ContinueButton disabled={proceed} onClick={() => {
-                    if(firstKey === "a" && secondKey === "b" && thirdKey === "c" && fourthKey === "d"){
+                    if(firstKey === process.env.REACT_APP_FIRST_KEY && 
+                        secondKey === process.env.REACT_APP_SECOND_KEY && 
+                        thirdKey === process.env.REACT_APP_THIRD_KEY && 
+                        fourthKey === process.env.REACT_APP_FOURTH_KEY){
                         setProceed(true)
                         alert.success("Chiavi corrette")
                         fade.out(document.querySelector('#content', 1500))

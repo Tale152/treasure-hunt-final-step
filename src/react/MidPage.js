@@ -30,7 +30,7 @@ export default function MidPage(props){
             </MyRow>
             <MyRow>
                 <ContinueButton disabled={proceed} onClick={() => {
-                    if(key === "x"){
+                    if(key === process.env.REACT_APP_FINAL_KEY){
                         setProceed(true)
                         alert.success("Chiave corretta")
                         fade.out(document.querySelector('#content', 1500))

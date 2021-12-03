@@ -14,7 +14,7 @@ export default function MidPage(props){
 
     return (
         <div>
-            <Exposition text={"Vittoria TODO"} />
+            <Exposition text={process.env.REACT_APP_FINAL_PAGE_TEXT} />
         </div>
     )
 }
