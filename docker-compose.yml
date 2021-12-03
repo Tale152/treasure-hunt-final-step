@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  react_client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_FIRST_KEY=a
+      - REACT_APP_SECOND_KEY=b
+      - REACT_APP_THIRD_KEY=c
+      - REACT_APP_FOURTH_KEY=d
+      - REACT_APP_FINAL_KEY=x
+      - REACT_APP_FINAL_PAGE_TEXT=Final page text
+    ports:
+      - 3000:3000
+    image: react_client
