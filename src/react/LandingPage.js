@@ -5,6 +5,7 @@ import { useAlert } from 'react-alert'
 import OpeningSound from '../res/Opening.mp3'
 import WrongSound from '../res/Wrong.mp3'
 
+import sendMail from './common/MailSeder'
 import Exposition from './common/Exposition'
 import KeyInput from './common/KeyInput'
 import MyRow from './common/MyRow'
@@ -24,7 +25,7 @@ export default function LandingPage(props){
         <div>
             <Exposition text={"Quattro chiavi per quattro profeti"} />
             <MyRow>
-                <Form>
+                <Form onSubmit={(e) => e.preventDefault()}>
                     <KeyInput id={"form.firstKey"} onChange={setFirstKey}/>
                     <KeyInput id={"form.secondKey"} onChange={setSecondKey}/>
                     <KeyInput id={"form.thirdKey"} onChange={setThirdKey}/>
@@ -41,6 +42,7 @@ export default function LandingPage(props){
                         setProceed(true)
                         alert.success("Chiavi corrette")
                         fade.out(document.querySelector('#content', 1500))
+                        sendMail(REACT_APP_MID_MAIL_TEMPLATE)
                         setTimeout(function(){
                             props.onUnlock()
                         }, 1600)

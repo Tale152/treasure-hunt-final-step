@@ -5,6 +5,7 @@ import { useAlert } from 'react-alert'
 import VictorySound from '../res/Victory.mp3'
 import WrongSound from '../res/Wrong.mp3'
 
+import sendMail from './common/MailSeder'
 import Exposition from './common/Exposition'
 import KeyInput from './common/KeyInput'
 import MyRow from './common/MyRow'
@@ -27,7 +28,7 @@ export default function MidPage(props){
         <div>
             <Exposition text={"La vittoria va conquistata in battaglia"} />
             <MyRow>
-                <Form>
+                <Form id={"midPageForm"} onSubmit={(e) => e.preventDefault()}>
                     <KeyInput id={"form.key"} onChange={setKey}/>
                 </Form>
             </MyRow>
@@ -38,6 +39,7 @@ export default function MidPage(props){
                         new Audio(VictorySound).play().then(/* does nothing */)
                         alert.success("Chiave corretta")
                         fade.out(document.querySelector('#content', 1500))
+                        sendMail(REACT_APP_FINAL_MAIL_TEMPLATE)
                         setTimeout(function(){
                             props.onUnlock()
                         }, 1600)
