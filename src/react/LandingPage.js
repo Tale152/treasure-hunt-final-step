@@ -2,6 +2,9 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { useAlert } from 'react-alert'
 
+import OpeningSound from '../res/Opening.mp3'
+import WrongSound from '../res/Wrong.mp3'
+
 import Exposition from './common/Exposition'
 import KeyInput from './common/KeyInput'
 import MyRow from './common/MyRow'
@@ -34,6 +37,7 @@ export default function LandingPage(props){
                         secondKey === process.env.REACT_APP_SECOND_KEY && 
                         thirdKey === process.env.REACT_APP_THIRD_KEY && 
                         fourthKey === process.env.REACT_APP_FOURTH_KEY){
+                        new Audio(OpeningSound).play().then(/* does nothing */)
                         setProceed(true)
                         alert.success("Chiavi corrette")
                         fade.out(document.querySelector('#content', 1500))
@@ -41,6 +45,7 @@ export default function LandingPage(props){
                             props.onUnlock()
                         }, 1600)
                     } else {
+                        new Audio(WrongSound).play().then(/* does nothing */)
                         alert.error("Chiavi errate")
                     }
                 }} />
