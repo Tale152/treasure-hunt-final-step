@@ -4,7 +4,7 @@ This web app is deployed automatically on Heroku using [this action](https://git
 
 Not my best code, but I need something as fast as I can.  
 
-I decided to only run the app (and not build it) in the Dockerfile because I need to keep the keys to win secret, even if my friends come here to cheat; to obtain this in the fastest way possible without having to create a backend server to verify keys, I decided to store the keys in **environment variables** (that are not reachable from a built react app... or at least I wasn't able to).  
+I decided to only run the app (and not build it) in the Dockerfile because I need to keep secret the keys to win, even if my friends come here to cheat; to obtain this in the fastest way possible without having to create a backend server to verify keys, I decided to store the keys in **environment variables** (that are not reachable from a built react app... or at least I wasn't able to).  
 **Said variables are set directly on Heroku (or in the docker-compose file)**.
 
 There are the environment variables to keep in mind while using this web app (all starting with REACT_APP due to React environment variables restrictions):
