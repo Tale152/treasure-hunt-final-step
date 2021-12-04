@@ -42,7 +42,7 @@ export default function LandingPage(props){
                         setProceed(true)
                         alert.success("Chiavi corrette")
                         fade.out(document.querySelector('#content', 1500))
-                        sendMail(REACT_APP_MID_MAIL_TEMPLATE)
+                        sendMail(process.env.REACT_APP_MID_MAIL_TEMPLATE)
                         setTimeout(function(){
                             props.onUnlock()
                         }, 1600)

@@ -39,7 +39,7 @@ export default function MidPage(props){
                         new Audio(VictorySound).play().then(/* does nothing */)
                         alert.success("Chiave corretta")
                         fade.out(document.querySelector('#content', 1500))
-                        sendMail(REACT_APP_FINAL_MAIL_TEMPLATE)
+                        sendMail(process.env.REACT_APP_FINAL_MAIL_TEMPLATE)
                         setTimeout(function(){
                             props.onUnlock()
                         }, 1600)
